@@ -1,0 +1,177 @@
+.controlpanel {
+  position: absolute;
+  z-index: 10000;
+  left: 23px;
+  top: 168px;
+  color: white;
+}
+
+.controlpanel button {
+  cursor: pointer;
+  border: none;
+  height: 36px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000000;
+  border-radius: 8px;
+  display: flex;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 25px;
+  outline: none;
+  align-items: center;
+}
+
+.controlpanel :active {
+  transform: translateY(2px);
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.companylogo {
+  position: absolute;
+  z-index: 10000;
+  width: 240px;
+  height: 114px;
+  left: 23px;
+  top: 23px;
+  image-rendering: crisp-edges;
+}
+
+.companydescription {
+  /* A B1G1 BUSINESS FOR GOOD MAP Find out more about B1G1: www.b1g1.com */
+  position: absolute;
+  z-index: 10000;
+  width: 168px;
+  height: 104px;
+  right: 23px;
+  bottom: 23px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.companydescription strong {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.companydescription small {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.companydescription a {
+  color: #00b4eb;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.impactcounter {
+  position: absolute;
+  z-index: 10000;
+  width: 343px;
+  height: 113px;
+  right: 23px;
+  top: 23px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  text-align: center;
+}
+
+.impactcounter strong {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 55px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82px;
+}
+
+.impactcounter small {
+  color: #00b4eb;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  line-height: 30px;
+}
+
+.sharetray {
+  position: absolute;
+  width: 40px;
+  height: auto;
+  left: 87px;
+  top: 351px;
+  z-index: 11000;
+  background: white;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
+
+.sharetray button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  padding: 0;
+  margin: 25% auto 25% auto;
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+
+.sharetray :active {
+  transform: translateY(0.5px);
+}
+
+.sharetray img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.regiontray {
+  position: absolute;
+  width: auto;
+  max-width: 235px;
+  height: auto;
+  left: 23px;
+  top: 334px;
+  z-index: 12000;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.regiontray button {
+  cursor: pointer;
+  border: none;
+  height: 36px;
+  width: auto;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  background-color: lightgray;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 4px;
+  outline: none;
+}
+
+

@@ -1,0 +1,45 @@
+.ais-SearchBox {
+    z-index: 13000;
+    position: absolute;
+    top: 168px;
+    right: 23px;
+    max-width: 175px;
+    font-size: 13px;
+}
+
+
+.hitsbox {
+    z-index: 13000;
+    background-color: white;
+    border-radius: 4px;
+    position: absolute;
+    top: 200px;
+    right: 23px;
+    width: 175px;
+    padding: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.hitsbox :hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.ais-SearchBox-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0.3rem 1.7rem;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
