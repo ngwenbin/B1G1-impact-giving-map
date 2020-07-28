@@ -1,136 +1,145 @@
+.mainpanel {
+  position: relative;
+  z-index: 10000;
+  top: 23px;
+}
+
 .controlpanel {
   position: absolute;
-  z-index: 10000;
+  display: inline-block;
   left: 23px;
-  top: 168px;
   color: white;
 }
 
 .controlpanel button {
   cursor: pointer;
-  border: none;
-  height: 36px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  color: #000000;
-  border-radius: 8px;
   display: flex;
+  border: none;
+  width: auto;
+  height: auto;
+  color: #000000;
+  border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  padding: 6px;
   outline: none;
   align-items: center;
 }
 
-.controlpanel :active {
-  transform: translateY(2px);
-}
-
-.material-icons.md-24 {
-  font-size: 24px;
+.controlpanel button strong{
+  padding-left: 5px;
+  padding-top: 2px;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 0.07rem;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .companylogo {
+  margin: 0;
+  cursor: pointer;
+  width: 120px;
+  image-rendering: crisp-edges;
+  padding-bottom: 10px;
+}
+
+.companylogo_embed {
   position: absolute;
   z-index: 10000;
-  width: 240px;
-  height: 114px;
-  left: 23px;
-  top: 23px;
+  padding: 10px;
+  width: 100px;
   image-rendering: crisp-edges;
 }
 
 .companydescription {
-  /* A B1G1 BUSINESS FOR GOOD MAP Find out more about B1G1: www.b1g1.com */
   position: absolute;
   z-index: 10000;
-  width: 168px;
-  height: 104px;
+  display: inline-block;
+  margin: 0;
   right: 23px;
   bottom: 23px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
+  font-family: 'brandon', sans-serif;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+  text-align: right;
 }
 
-.companydescription strong {
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
+.companydescription h4 {
+  color: #323334;
+  font-weight: 600;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  margin: 0;
 }
 
-.companydescription small {
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
+.companydescription h6 {
+  color: #323334;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 .companydescription a {
   color: #00b4eb;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 18px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
   text-decoration: none;
 }
 
 .impactcounter {
   position: absolute;
   z-index: 10000;
-  width: 343px;
-  height: 113px;
+  display: inline-block;
+  width: 320px;
   right: 23px;
   top: 23px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  text-align: center;
+  text-align: right;
 }
 
-.impactcounter strong {
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 55px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
+.impactcounter h2 {
+  color: #323334;
   font-weight: 700;
-  line-height: 82px;
+  font-size: 60px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
-.impactcounter small {
-  color: #00b4eb;
+.impactcounter p {
+  color: #323334;
   font-weight: 600;
   font-size: 20px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  line-height: 30px;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .sharetray {
   position: absolute;
-  width: 40px;
-  height: auto;
-  left: 87px;
-  top: 351px;
   z-index: 11000;
+  display: inline-flex;
   background: white;
-  overflow: hidden;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 2px;
 }
 
 .sharetray button {
+  margin: 0;
   cursor: pointer;
   border: none;
   outline: none;
   background-repeat: no-repeat;
   background-color: transparent;
-  padding: 0;
-  margin: 25% auto 25% auto;
-  display: block;
-  text-align: center;
-  align-items: center;
+  box-shadow: none;
 }
 
 .sharetray :active {
@@ -139,39 +148,412 @@
 
 .sharetray img {
   width: 24px;
-  height: 24px;
-  display: block;
+  height: auto;
 }
 
 .regiontray {
   position: absolute;
-  width: auto;
-  max-width: 235px;
-  height: auto;
-  left: 23px;
-  top: 334px;
-  z-index: 12000;
+  z-index: 11000;
+  width: 281px;
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 4px;
 }
 
 .regiontray button {
   cursor: pointer;
   border: none;
-  height: 36px;
-  width: auto;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 600;
+  max-height: 40px;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.07rem;
   color: #000000;
   background-color: lightgray;
-  border-radius: 8px;
+  border-radius: 4px;
   display: inline-block;
   margin: 4px;
+  padding: 6px;
   outline: none;
+  box-shadow: none;
 }
 
+.infocontainer {
+  position: absolute;
+  z-index: 10000;
+  display: inline-block;
+  max-width: 250px;
+  width: auto;
+  height: auto;
+  right: 23px;
+  top: 250px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 4px;
+  margin: 0;
+  font-size: 11px;
+  background-color: white;
+  padding: 15px
+}
 
+.infocontainer_embed {
+  position: absolute;
+  z-index: 10000;
+  display: inline-block;
+  max-width: 220px;
+  width: auto;
+  bottom: 8px;
+  left: 8px;
+  margin: auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 4px;
+  font-size: 10px;
+  background-color: white;
+  padding: 8px
+}
+
+.infoheader {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+
+}
+.infoheader_profile {
+  padding-right: 30px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.infoheader_profile img{
+  max-width: 40px;
+  max-height: 40px;
+  padding-right: 10px;
+}
+
+.infoheader_profile_embed {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.infoheader_profile_embed img{
+  max-width: 30px;
+  max-height: 30px;
+  padding-right: 10px;
+}
+
+.infoheader_data * {
+  padding: 0;
+  margin: 0;
+}
+.infoheader button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  float: right;
+}
+.infoheader button :hover {
+  color:grey;
+}
+
+.infometa{
+  font-weight: 300;
+  line-height: 14px;
+  padding-top: 3%;
+  padding-bottom: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infometa_embed{
+  font-weight: 300;
+  padding-top: 7px;
+  padding-right: 5px;
+  line-height: 12px;
+  align-items: center;
+  font-size: 10px;
+}
+
+.infometa_embed *{
+  margin: 0;
+  text-decoration: none;
+}
+
+.infometa * {
+  margin: 0;
+  text-decoration: none;
+}
+
+.infometa button {
+  cursor: pointer;
+  margin-left: 10px;
+  display: flex;
+  border: none;
+  width: auto;
+  height: auto;
+  background: none;
+  background-color: white;
+  padding: 4px;
+}
+
+.infometa button :hover {
+  color:grey;
+}
+
+.infocontent {
+  max-height: 14vh;
+  height: auto;
+}
+.infocontent p {
+  margin: 0;
+  text-align: justify;
+  height: auto;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 14px;
+}
+
+@media only screen  and (max-width: 767px) {
+  .controlpanel button {
+    cursor: pointer;
+    display: flex;
+    border: none;
+    height: auto;
+    color: #000000;
+    border-radius: 3px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+    padding: 4px;
+    outline: none;
+  }
+
+  .controlpanel button strong{
+    padding-left: 3px;
+    padding-top: 1px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .companylogo {
+    margin: 0;
+    cursor: pointer;
+    width: 60px;
+    image-rendering: crisp-edges;
+  }
+
+  .regiontray {
+    position: absolute;
+    z-index: 11000;
+    width: 188px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+    margin: 0;
+  }
+
+  .regiontray button {
+    cursor: pointer;
+    border: none;
+    height: auto;
+    width: auto;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #000000;
+    background-color: lightgray;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 2px;
+    padding: 5px;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .sharetray {
+    position: absolute;
+    z-index: 11000;
+    display: inline-flex;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+    text-align: center;
+    padding: 2px;
+  }
+
+  .sharetray button {
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .sharetray img {
+    width: 20px;
+    height: auto;
+  }
+
+  .infocontainer {
+    position: absolute;
+    z-index: 9000;
+    display: inline-block;
+    max-width: 185px;
+    width: auto;
+    bottom: 23px;
+    left: 0;
+	  right: 0;
+    margin: auto;
+    top: unset;
+    padding: 10px;
+    font-size: 8px;
+    border-radius: 3px;
+  }
+
+  .infoheader_profile img{
+    max-width: 30px;
+    max-height: 30px;
+    padding-right: 10px;
+  }
+
+  .infocontent {
+    display: none;
+    margin: 0;
+  }
+
+  .infocontent p {
+    display: none;
+  }
+
+  .infometa{
+    align-items: center;
+    padding-bottom: 0;
+    line-height: 10px;
+  }
+}
+
+@media screen and (min-width : 320px) and (max-width : 890px) and (orientation :landscape) {
+  .controlpanel button {
+    cursor: pointer;
+    display: flex;
+    border: none;
+    height: auto;
+    color: #000000;
+    border-radius: 3px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+    padding: 4px;
+    outline: none;
+  }
+
+  .controlpanel button strong{
+    padding-left: 3px;
+    padding-top: 1px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .companylogo {
+    margin: 0;
+    cursor: pointer;
+    width: 70px;
+    image-rendering: crisp-edges;
+  }
+
+  .regiontray {
+    position: absolute;
+    z-index: 11000;
+    width: 219px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+    padding: 4px;
+  }
+
+  .regiontray button {
+    cursor: pointer;
+    border: none;
+    max-height: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    color: #000000;
+    background-color: lightgray;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 4px;
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* ShareTray container */
+  .sharetray {
+    position: absolute;
+    z-index: 11000;
+    display: inline-flex;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+    text-align: center;
+    padding: 2px;
+  }
+
+  /* This is for the buttons in the sharetray */
+  .sharetray button {
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .sharetray img {
+    width: 20px;
+    height: auto;
+  }
+
+  .infocontainer {
+    position: absolute;
+    z-index: 9000;
+    display: inline-block;
+    max-width: 220px;
+    width: auto;
+    bottom: 23px;
+    left: 0;
+	  right: 0;
+    margin: auto;
+    top: unset;
+    padding: 10px;
+    font-size: 8px;
+    border-radius: 3px;
+  }
+
+  .infoheader_profile img{
+    max-width: 30px;
+    max-height: 30px;
+    padding-right: 10px;
+  }
+
+  .infocontent {
+    display: none;
+  }
+
+  .infocontent p {
+    display: none;
+  }
+
+  .infometa{
+    align-items: center;
+    line-height: 10px;
+    padding-bottom: 0;
+  }
+}

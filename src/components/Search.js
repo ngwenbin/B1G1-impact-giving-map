@@ -1,52 +1,60 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   InstantSearch,
   SearchBox,
   Hits,
   connectStateResults,
+  PoweredBy ,
 } from "react-instantsearch-dom";
-import "../search.css";
+import "../index.css";
 import algoliasearch from "algoliasearch/lite";
+import "simplebar/dist/simplebar.min.css"; // Scroll bar design
+
+const ALGOLIA_TOKEN = process.env.REACT_APP_ALGOLIA_API_TOKEN;
 
 const Search = (params) => {
   const searchClient = algoliasearch(
-    "FTGK6O8M29",
-    "cde8e17b1766a7a49991df605ba1e1ba"
+    "FTGK6O8M29", // Algolia app name
+    ALGOLIA_TOKEN // Algolia API key
   );
-  //const [searchbusiness, setSearchBusiness] = useState([]);
 
-  const Results = connectStateResults(
-    ({ searchState, searchResults, children }) => {
+  const Results = connectStateResults( // Custom algolia search component
+
+    ({ searchState, searchResults }) => {
       const results = searchResults && searchResults.hits;
-
-      return searchState && searchState.query ? (
-        searchResults && searchResults.nbHits !== 0 ? (
-          <div className="hitsbox">
-            {Object.keys(results).map((key) => (
-              <div
-                key={key}
-                onClick={() =>
-                  params.setSearchBusiness(Object.values(results[key].id))
-                }
+      return searchState && searchState.query ? ( // Checks if search bar has any queries
+        searchResults && searchResults.nbHits !== 0 ? ( // Checks if search has any hits
+             <div className="hitsbox">
+            {Object.keys(results).map((key, i) => (
+              <div className ="hitsbox_results"
+                key={i}
+                onClick={() =>{
+                  params.setSearchBusiness(results[key]) // Set the clicked business data into searchbusiness state
+                  params.setBusinessEnabled(false) // Hide business markers
+                  params.setProjectEnabled(false) // Hide project markers
+                  searchState.query = null // Clear search bar
+                }}
               >
-                {Object.values(results[key].name)}
+                <h4>{results[key].name}</h4>
+                <h5>{results[key].country}</h5>
               </div>
             ))}
+            <div style={{padding: 7, display: "flex", justifyContent: "center", alignItems: "center", zoom:0.7}}>
+              <PoweredBy/>
+            </div>
           </div>
         ) : null
       ) : null;
     }
   );
-
   return (
     <InstantSearch searchClient={searchClient} indexName="test_IMPACTMAP">
       <SearchBox
-        searchAsYouType={false}
-        translations={{ placeholder: "Search businesses..." }}
+        translations={{ placeholder: "Search..." }}
       />
-      <Results>
-        <Hits />
-      </Results>
+        <Results>
+          <Hits />
+        </Results>
     </InstantSearch>
   );
 };

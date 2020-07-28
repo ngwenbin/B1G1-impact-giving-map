@@ -1,46 +1,45 @@
-import React from "react";
-import MapGL from "react-map-gl";
-import { DeckGL, ScatterplotLayer, ArcLayer } from "deck.gl";
-import GL from '@luma.gl/constants';
-import { easeBackInOut, easeExpIn, easeLinear } from 'd3';
+import React, { useMemo } from 'react';
+import StaticMap from 'react-map-gl';
+import { DeckGL, ScatterplotLayer, ArcLayer } from 'deck.gl';
+// import GL from '@luma.gl/constants';
+import { easeBackInOut, easeExpIn } from 'd3';
+import { useHistory } from "react-router-dom";
 
-export default function Map({
+const Map = ({
   width,
   height,
   viewState,
-  updates,
-  marker,
   onViewStateChange,
   businessEnabled,
   projectEnabled,
-  arcsEnabled,
-  arcsEnabled2,
+  updates,
+  marker,
   pulsate,
-  //connectiondata,
-  impacts,
-  searchmarker
-}) {
+  giving,
+  searchbusiness,
+  token
+}) => {
+  const searchBusinessGivings = useMemo(() => giving.filter(items => items.id === searchbusiness.id), [giving, searchbusiness])
+
+  const history = useHistory();
+
   const layers = [
     new ScatterplotLayer({
       id: 'scatter-layer-business',
       data : marker[0],
       getPosition: d => [parseFloat(d.position[0]), parseFloat(d.position[1])],
-      getFillColor: businessEnabled? [60, 220, 255] : [255, 255, 255],
+      getFillColor: businessEnabled? [0, 180, 235] : [0, 180, 235],
       radiusMaxPixels: 8,
-      opacity: 0.3,
-      getRadius: businessEnabled? 4000 : 0,
+      opacity: 1,
+      getRadius: businessEnabled? 10000 : 0,
       stroked : true,
+      lineWidthMinPixels: 1,
       radiusScale : 20,
-      lineWidthMinPixels: 0.3,
-      parameters: {
-        [GL.DEPTH_TEST]: false,
-        [GL.BLEND]: true,
-        [GL.BLEND_SRC_RGB]: GL.ONE,
-        [GL.BLEND_DST_RGB]: GL.ONE,
-        [GL.BLEND_EQUATION]: GL.FUNC_ADD,
-      },
+      pickable: true,
+      onClick: info => history.push(`/share?id=${info.object.id}`),
+      getLineColor: d => [255, 255, 255],
       transitions: {
-        getFillColor: 600,
+        getFillColor: 1000,
         getRadius: {
           duration: 1000,
           easing: easeBackInOut,
@@ -51,20 +50,15 @@ export default function Map({
       id: 'scatter-layer-project',
       data : marker[1],
       getPosition: d => [parseFloat(d.position[0]), parseFloat(d.position[1])],
-      getFillColor: projectEnabled? [255,159,60] : [255, 255, 255],
-      getRadius: projectEnabled? 4000 : 0,
-      radiusScale : 20,
+      getFillColor: projectEnabled? [255,170,0] : [255,159,60],
       radiusMaxPixels: 8,
-      opacity: 0.3,
+      opacity: 1,
+      getRadius: projectEnabled? 10000 : 0,
       stroked : true,
-      lineWidthMinPixels: 0.3,
-      parameters: {
-        [GL.DEPTH_TEST]: false,
-        [GL.BLEND]: true,
-        [GL.BLEND_SRC_RGB]: GL.ONE,
-        [GL.BLEND_DST_RGB]: GL.ONE,
-        [GL.BLEND_EQUATION]: GL.FUNC_ADD,
-      },
+      lineWidthMinPixels: 1,
+      radiusScale : 20,
+      pickable: false,
+      getLineColor: d => [255, 255, 255],
       transitions: {
         getFillColor: 600,
         getRadius: {
@@ -77,11 +71,11 @@ export default function Map({
       id: 'scatter-layer-updates',
       data: updates,
       getPosition: d => [parseFloat(d.position[1]), parseFloat(d.position[0])],
-      getFillColor: [60, 220, 255],
-      getRadius: 35000,
+      getFillColor: [255, 170, 0],
       radiusMaxPixels: 20,
       radiusMinPixels: 35000,
       opacity: pulsate? 0.3 : 0,
+      getRadius: 35000,
       radiusScale: 10,
       transitions: {
         opacity: 400,
@@ -89,71 +83,66 @@ export default function Map({
       },
     }),
 
-    // new ArcLayer({
-    //   id: 'arc-layer-randomimpacts',
-    //   data: connectiondata,
-    //   getSourcePosition: d => [parseFloat(d.source[0]), parseFloat(d.source[1])],
-    //   getTargetPosition: d => [parseFloat(d.target[0]), parseFloat(d.target[1])],
-    //   getSourceColor: [60, 220, 255],
-    //   getTargetColor: [255,159,60],
-    //   getWidth: 1,
-    //   getHeight: 0.5,
-    //   opacity: arcsEnabled? 1 : 0,
-    // }),
-
     new ArcLayer({
-      id: 'arc-layer-allimpacts',
-      data: impacts,
+      id: 'arc-layer-searchbusiness',
+      data: searchBusinessGivings,
       getSourcePosition: d => [parseFloat(d.source[1]), parseFloat(d.source[0])],
       getTargetPosition: d => [parseFloat(d.target[1]), parseFloat(d.target[0])],
-      getSourceColor: [60, 220, 255],
-      getTargetColor: [255,159,60],
+      getSourceColor: [0, 180, 235],
+      getTargetColor: [255, 170, 0],
       getHeight: 0.7,
-      opacity: 0.005,
-      getWidth: arcsEnabled2? 0.2 : 0,
-      transitions: {
-        getWidth: 1000,
-        easing: easeLinear
-      },
-      parameters: {
-        [GL.DEPTH_TEST]: false,
-        [GL.BLEND]: true,
-        [GL.BLEND_DST_RGB]: GL.ONE,
-        [GL.BLEND_EQUATION]: GL.FUNC_ADD,
-      },
+      opacity: 0.5,
+      getWidth: 1.5,
+      // luma GL for blending colours together.
+      // parameters: {
+      //   [GL.DEPTH_TEST]: false,
+      //   [GL.BLEND]: true,
+      //   [GL.BLEND_DST_RGB]: GL.ONE,
+      //   [GL.BLEND_EQUATION]: GL.FUNC_ADD,
+      // },
     }),
 
-    new ArcLayer({
-      id: 'arc-layer-searchimpacts',
-      data: searchmarker,
-      getSourcePosition: d => [parseFloat(d.source[1]), parseFloat(d.source[0])],
-      getTargetPosition: d => [parseFloat(d.target[1]), parseFloat(d.target[0])],
-      getSourceColor: [60, 220, 255],
-      getTargetColor: [255,159,60],
-      getHeight: 0.7,
-      opacity: 0.005,
-      getWidth: 0.2,
-      parameters: {
-        [GL.DEPTH_TEST]: false,
-        [GL.BLEND]: true,
-        [GL.BLEND_DST_RGB]: GL.ONE,
-        [GL.BLEND_EQUATION]: GL.FUNC_ADD,
-      },
+    new ScatterplotLayer({
+      id: 'searchbusiness-business-marker',
+      data : searchBusinessGivings,
+      getPosition: d => [parseFloat(d.source[1]), parseFloat(d.source[0])],
+      getFillColor: [0, 180, 235],
+      radiusMaxPixels: 8,
+      opacity: 1,
+      getRadius: 10000,
+      stroked : true,
+      lineWidthMinPixels: 1,
+      radiusScale : 35,
+      getLineColor: d => [255, 255, 255],
+    }),
+
+    new ScatterplotLayer({
+      id: 'searchbusiness-project-marker',
+      data : searchBusinessGivings,
+      getPosition: d => [parseFloat(d.target[1]), parseFloat(d.target[0])],
+      getFillColor: [255,170,0],
+      radiusMaxPixels: 8,
+      opacity: 1,
+      getRadius: 10000,
+      stroked : true,
+      lineWidthMinPixels: 1,
+      radiusScale : 20,
+      getLineColor: d => [255, 255, 255],
     }),
 
 ];
-  //
   return (
-    <MapGL
+    <StaticMap
       width={width}
       height={height}
       viewState={viewState}
       onViewStateChange={onViewStateChange}
-      minZoom={1.4}
-      maxZoom={16.1}
-      mapStyle="mapbox://styles/nwb10/ckb6ebr1c3m3p1ionkpulgc8v"
+      mapboxApiAccessToken={token}
+      mapStyle="mapbox://styles/b1g1nhi/ckcym3tju1z4l1hmje5bllzy3"
     >
-    <DeckGL layers={layers} viewState={viewState}/>;
-    </MapGL>
+    <DeckGL layers={layers} viewState={viewState}/>
+    </StaticMap>
   );
 }
+
+export default Map

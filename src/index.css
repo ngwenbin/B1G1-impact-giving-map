@@ -11,3 +11,161 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face{
+  font-family: "brandon", sans-serif;
+  src: url('/assets/fonts/brandon.ttf');
+}
+
+.md-24 {
+  font-size: 22px;
+}
+
+.md-18 {
+  font-size: 16px
+}
+
+@media only screen  and (max-width: 767px) {
+  .md-24 {
+    font-size: 16px;
+  }
+
+  .md-18 {
+    font-size: 12px
+  }
+}
+
+@media screen and (min-width : 320px) and (max-width : 890px) and (orientation :landscape) {
+  .md-24 {
+    font-size: 16px;
+  }
+
+  .md-18 {
+    font-size: 12px
+  }
+}
+
+.ais-SearchBox-submitIcon {
+  width: 14px;
+  height: 14px;
+}
+.ais-SearchBox-resetIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.ais-SearchBox {
+  z-index: 13000;
+  position: absolute;
+  top: 130px;
+  right: 23px;
+  max-width: 200px;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.ais-SearchBox-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.5rem 1.7rem;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 500;
+}
+
+.hitsbox {
+  z-index: 13000;
+  background-color: white;
+  position: absolute;
+  top: 162px;
+  right: 23px;
+  width: 200px;
+  padding: 0;
+  margin-top: 5px;
+  max-height: 40%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+}
+
+.hitsbox_results {
+  z-index: 13000;
+  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 7px;
+  margin: 0;
+}
+
+.hitsbox_results h4 {
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.hitsbox_results h5 {
+  font-weight: 300;
+  color: grey;
+  padding: 0;
+  margin: 0;
+}
+
+.hitsbox :hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .ais-SearchBox {
+    z-index: 13000;
+    position: absolute;
+    top: 40px;
+    right: 23px;
+    max-width: 100px;
+    font-size: 12px;
+  }
+
+  .ais-SearchBox-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0.4rem 1.7rem;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    outline: 0;
+    border: 0;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+  }
+
+  .hitsbox {
+    z-index: 13000;
+    background-color: white;
+    position: absolute;
+    top: 78px;
+    right: 23px;
+    width: 150px;
+    padding: 0;
+    margin-top: 5px;
+    max-height: 40%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+  }
+
+  .hitsbox_results {
+    z-index: 13000;
+    font-size: 12px;
+    font-family: "Josefin Sans", sans-serif;
+    padding: 7px;
+    margin: 0;
+  }
+}
