@@ -7,9 +7,9 @@ const Markers = (props) => {
         // The below urls are rerouted to a proxy server due to CORs policy.
 
         // let business_url = "https://cors-anywhere.herokuapp.com/https://businessesforgood.com/businessInfo.php";
-        let business_url = "https://baroque-gerard-57112.herokuapp.com/https://businessesforgood.com/businessInfo.php";
+        let business_url = "{proxyserver}/https://businessesforgood.com/businessInfo.php";
         // let project_url = "https://cors-anywhere.herokuapp.com/https://businessesforgood.com/projectsInfo.php";
-        let project_url = "https://baroque-gerard-57112.herokuapp.com/https://businessesforgood.com/projectsInfo.php";
+        let project_url = "{proxyserver}/https://businessesforgood.com/projectsInfo.php";
         let impact_url = "https://api.b1g1.com/contribution/stat";
         axios
           .all([

@@ -14,7 +14,7 @@ const ALGOLIA_TOKEN = process.env.REACT_APP_ALGOLIA_API_TOKEN;
 
 const Search = (params) => {
   const searchClient = algoliasearch(
-    "FTGK6O8M29", // Algolia app name
+    "APP_NAME", // Algolia app name
     ALGOLIA_TOKEN // Algolia API key
   );
 
@@ -48,7 +48,7 @@ const Search = (params) => {
     }
   );
   return (
-    <InstantSearch searchClient={searchClient} indexName="test_IMPACTMAP">
+    <InstantSearch searchClient={searchClient} indexName="INDEX_NAME">
       <SearchBox
         translations={{ placeholder: "Search..." }}
       />

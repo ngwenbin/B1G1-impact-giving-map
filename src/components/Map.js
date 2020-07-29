@@ -138,7 +138,7 @@ const Map = ({
       viewState={viewState}
       onViewStateChange={onViewStateChange}
       mapboxApiAccessToken={token}
-      mapStyle="mapbox://styles/b1g1nhi/ckcym3tju1z4l1hmje5bllzy3"
+      mapStyle="MAP_STYLE"
     >
     <DeckGL layers={layers} viewState={viewState}/>
     </StaticMap>

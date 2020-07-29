@@ -15,7 +15,7 @@ const ShareTray = (props) => {
       <button
         onClick={() =>
           window.open(
-            "https://www.facebook.com/dialog/share?app_id=331903781112565&href=https%3A%2F%2Fb1g1impactmap.herokuapp.com%2F",
+            "https://www.facebook.com/dialog/share?app_id={APP_ID}&href=https%3A%2F%2Fb1g1impactmap.herokuapp.com%2F",
             "Popup",
             "toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30"
           )

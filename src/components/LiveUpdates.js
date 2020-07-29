@@ -19,7 +19,7 @@ const LiveUpdates = (props) => {
         axios
           // The below urls are rerouted to a proxy server due to CORs policy.
 
-          .get(`https://baroque-gerard-57112.herokuapp.com/https://businessesforgood.com/live_updates.php?pageNo=${counts}`)
+          .get(`{proxyserver}.herokuapp.com/https://businessesforgood.com/live_updates.php?pageNo=${counts}`)
           // .get(`https://cors-anywhere.herokuapp.com/https://businessesforgood.com/live_updates.php?pageNo=${counts}`)
           .then((res) => {
             const $ = cheerio.load(res.data); // scrapping of live updates data via cheerio

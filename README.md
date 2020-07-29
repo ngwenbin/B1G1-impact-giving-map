@@ -9,7 +9,12 @@ See demo:
 ## Requirements before running
 
 Algolia API key
+Algolia appname
+Algolia indexname
 Mapbox API key
+Mapbox mapstyle
+Facebook app_id key
+proxy server for cors bypass
 
 ## Available Scripts
 

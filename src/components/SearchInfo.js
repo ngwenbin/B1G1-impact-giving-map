@@ -20,7 +20,7 @@ const SearchInfo = (props) => {
     let url = `https://b1g1impactmap.herokuapp.com/share?id=${id}`
     const encoded = encodeURI(url);
     window.open(
-      `https://www.facebook.com/dialog/share?app_id=331903781112565&href=${encoded}`,
+      `https://www.facebook.com/dialog/share?app_id={APP_ID}&href=${encoded}`,
       "Popup",
       "toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30"
     )

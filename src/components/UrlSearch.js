@@ -11,8 +11,8 @@ const Urlsearch = (props) => {
   useEffect(() => {
     // The below urls are rerouted to a proxy server due to CORs policy.
 
-    // let url = `https://baroque-gerard-57112.herokuapp.com/https://businessesforgood.com/infowindow_data.php?uid=${id}`;
-    let url = `https://cors-anywhere.herokuapp.com/https://businessesforgood.com/infowindow_data.php?uid=${id}`;
+    let url = `{proxyserver}/https://businessesforgood.com/infowindow_data.php?uid=${id}`;
+    // let url = `https://cors-anywhere.herokuapp.com/https://businessesforgood.com/infowindow_data.php?uid=${id}`;
     props.setBusinessEnabled(false)
     props.setProjectEnabled(false)
     axios
