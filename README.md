@@ -8,19 +8,27 @@ See demo:
 
 ## Requirements before running
 
-Algolia API key
+* Algolia API key
 
-Algolia appname
+* Algolia appname
 
-Algolia indexname
+* Algolia indexname
 
-Mapbox API key
+* Mapbox API key
 
-Mapbox mapstyle
+* Mapbox mapstyle
 
-Facebook app_id key
+* Facebook app_id key
 
-proxy server for cors bypass
+* Proxy server for cors bypass
+
+* Create a .env file for local development with the following keys:
+```sh
+REACT_APP_MAPBOX_ACCESS_TOKEN = YOUR TOKEN
+
+REACT_APP_ALGOLIA_API_TOKEN = YOUR TOKEN
+```
+* Do remember to add env vars in your deployment platform
 
 ## Available Scripts
 
