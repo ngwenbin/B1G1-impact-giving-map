@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 An interactive map with attractive data visuals for both external and internal stakeholders.
 
-See demo:
+See demo: https://b1g1impactmaptest.herokuapp.com/
 
 ## Requirements before running
 
